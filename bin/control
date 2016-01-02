@@ -1,7 +1,8 @@
 #!/bin/bash -e
 
 source $OPENSHIFT_CARTRIDGE_SDK_BASH
-
+# to avoid "foreman: command not found errors!"
+PATH=$PATH:$OPENSHIFT_HOMEDIR/.gem/bin
 FOREMAN_PID_FILE=${OPENSHIFT_FOREMAN_RUN_DIR}/foreman.pid
 
 function isrunning() {
